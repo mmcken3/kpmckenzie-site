@@ -6,18 +6,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="description" content="">
 <meta name="keywords" content="">
-<meta name="author" content="templatemo">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <title>Katie McKenzie</title>
-<!--
-Stimulus Template
-http://www.templatemo.com/tm-498-stimulus
--->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/templatemo-style.css">
+<link rel="stylesheet" href="css/check.css">
 
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
 
@@ -202,7 +198,7 @@ http://www.templatemo.com/tm-498-stimulus
                          </div>
 
                          <div id="contact-form">
-                              <form action="#template-mo" method="post">
+                              <form id="myForm" action="#template-mo" method="post">
                                    <div class="wow fadeInUp" data-wow-delay="1s">
                                         <input name="fullname" type="text" class="form-control" id="fullname" placeholder="Your Name">
                                    </div>
@@ -213,7 +209,7 @@ http://www.templatemo.com/tm-498-stimulus
                                         <textarea name="message" rows="5" class="form-control" id="message" placeholder="Write your message..."></textarea>
                                    </div>
                                    <div class="wow fadeInUp col-md-6 col-sm-8" data-wow-delay="1.6s">
-                                        <input name="submit" type="submit" class="form-control" id="submit" value="Send">
+                                        <input name="submit" type="button" class="form-control" id="submit" value="Send" onclick="sendMessage()">
                                    </div>
                               </form>
                          </div>
@@ -232,6 +228,7 @@ http://www.templatemo.com/tm-498-stimulus
                               <p><i class="fa fa-phone"></i>(843)-697-8565</p>
                               <p><i class="fa fa-envelope-o"></i> <a href="mailto:kpowell2257@gmail.com">kpowell2257@gmail.com</a></p>
                               <p><i class="fa fa-globe"></i> <a href="https://www.linkedin.com/in/katie-mckenzie-640532105/" target="_blank">LinkedIn</a></p>
+                              <p><i class="fa fa-globe"></i> <a href="https://www.etsy.com/shop/myletterhalf?ref=shop_sugg" target="_blank">Check out my Etsy shop</a></p>
                          </div>
 
                     </div>
@@ -255,7 +252,74 @@ http://www.templatemo.com/tm-498-stimulus
 		    </div>
 	</div>
 </footer>
+
+<!-- Modal -->
+<div id="success_tic" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <a class="close" href="#" data-dismiss="modal">&times;</a>
+            <div class="page-body">
+                <div class="head">  
+                    <h3 style="margin-top:5px;">Success!</h3>
+                    <h4>Your message has been sent</h4>
+                </div>
+
+                <h1 style="text-align:center;"><div class="checkmark-circle">
+                    <div class="background"></div>
+                        <div class="checkmark draw"></div>
+                    </div>
+                <h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="fail_x" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <a class="close" href="#" data-dismiss="modal">&times;</a>
+            <div class="page-body">
+                <div class="head">  
+                    <h3 style="margin-top:5px;">Sorry!</h3>
+                    <h4>Your message send failed, please try again</h4>
+                </div>
+
+                <h1 style="text-align:center;"><div class="checkmark-circle">
+                    <div class="background"></div>
+                        <div class="checkmark draw"></div>
+                    </div>
+                    <h1>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- SCRIPTS -->
+<script>
+    function sendMessage(){
+        var fname = document.getElementById("myForm").elements.namedItem("fullname").value;
+        var ead = document.getElementById("myForm").elements.namedItem("email").value;
+        var tmessage = document.getElementById("myForm").elements.namedItem("message").value;
+        var sendObj = {name: fname, email_address: ead, message: tmessage}
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://68.183.25.114:3000/v1/send/text", true);
+        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhr.onload = function () {
+            var users = JSON.parse(xhr.responseText);
+            if (xhr.readyState == 4 && xhr.status == "200") {
+                console.log("Message send success")
+                $('#success_tic').modal('show')
+            } else {
+                console.log("Message send fail")
+                $('#fail_x').modal('show')
+            }
+        }
+        xhr.send(JSON.stringify(sendObj));
+    }
+</script>
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>

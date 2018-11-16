@@ -354,9 +354,9 @@ a:hover, a:active, a:focus {
 }
 
 #home .home-img {
-  background: url('../images/katiep.png') no-repeat;
+  background: url('../images/katie_pro1.png') no-repeat;
   background-size: cover;
-  background-position: 20% 20%;
+  background-position: 50% 20%;
   width: 100%;
   height: 100vh;
 }
@@ -498,7 +498,7 @@ a:hover, a:active, a:focus {
 }
 
 #contact .contact-img {
-  background: url('../images/katiep.png') no-repeat;
+  background: url('../images/katie_pro1.png') no-repeat;
   min-height: 75vh;
 }
 
@@ -532,7 +532,7 @@ a:hover, a:active, a:focus {
   height: 45px;
 }
 
-#contact input[type="submit"] {
+#contact input[type="button"] {
   background: #ffffff;
   border: 2px solid transparent;
   border-radius: 40px;
@@ -540,7 +540,7 @@ a:hover, a:active, a:focus {
   padding-bottom: 10px;
 }
 
-#contact input[type="submit"]:hover {
+#contact input[type="button"]:hover {
   background: transparent;
   border-color: #ffffff;
   color: #ffffff;
