@@ -1,6 +1,8 @@
 # Katie Powell McKenzie Personal Website
 
-This is a personal website for Katie Powell McKenzie. It is currently a work in progress that is under development.
+This is a personal website for Katie Powell McKenzie. As a back end engineer I used a lot of bootstrap and templating tech to make this look better. The contact form on the page uses my (Email Api)[https://github.com/mmcken3/email-api] to send the messages to through text right now. In the future it will sent emails or both text and emails with it. 
+
+*Still under development*
 
 # Tools and Credits
 
@@ -10,4 +12,3 @@ This is a personal website for Katie Powell McKenzie. It is currently a work in 
 
 [Stock Images](http://startupstockphotos.com/)
 
-[Photos](http://www.avamoorephotography.com/)
