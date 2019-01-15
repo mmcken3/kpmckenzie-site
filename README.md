@@ -4,6 +4,8 @@ This is a personal website for Katie Powell McKenzie. As a back end engineer I u
 
 *Still under development*
 
+I would like to work on improving the SEO of this site and potential adding/adjusting some of the current sections.
+
 # Tools and Credits
 
 [Pipeline HTML CSS Template](http://www.templatemo.com/tm-498-stimulus)
@@ -12,3 +14,4 @@ This is a personal website for Katie Powell McKenzie. As a back end engineer I u
 
 [Stock Images](http://startupstockphotos.com/)
 
+Used a template from [Free HTML5](https://freehtml5.co/) and made a good bit of adjustments/additions to it.
