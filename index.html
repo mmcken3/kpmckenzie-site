@@ -327,20 +327,20 @@
         var ead = document.getElementById("myForm").elements.namedItem("email").value;
         var tmessage = document.getElementById("myForm").elements.namedItem("message").value;
         var sendObj = {name: fname, email_address: ead, message: tmessage}
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://68.183.25.114:3000/v1/send/text", true);
-        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-        xhr.onload = function () {
-            var users = JSON.parse(xhr.responseText);
-            if (xhr.readyState == 4 && xhr.status == "200") {
-                console.log("Message send success")
-                $('#success_tic').modal('show')
-            } else {
-                console.log("Message send fail")
-                $('#fail_x').modal('show')
-            }
-        }
-        xhr.send(JSON.stringify(sendObj));
+     //    var xhr = new XMLHttpRequest();
+     //    xhr.open("POST", "http://68.183.25.114:3000/v1/send/text", true);
+     //    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+     //    xhr.onload = function () {
+     //        var users = JSON.parse(xhr.responseText);
+     //        if (xhr.readyState == 4 && xhr.status == "200") {
+     //            console.log("Message send success")
+     //            $('#success_tic').modal('show')
+     //        } else {
+     //            console.log("Message send fail")
+     //            $('#fail_x').modal('show')
+     //        }
+     //    }
+     //    xhr.send(JSON.stringify(sendObj));
     }
 </script>
 
